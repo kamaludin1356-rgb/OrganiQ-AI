@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "totalOrganizations": 500000,
+    "generatedAt": "2026-06-16T19:04:43.034Z"
+  },
+  "executiveSummary": {
+    "overview": "Dataset berisi 500000 organisasi global.",
+    "dominantCountry": "Korea",
+    "dominantIndustry": "Computer Software / Engineering",
+    "largestEmployeeCategory": "5001+",
+    "averageFoundedYear": 1996,
+    "keyInsight": "Mayoritas organisasi berada pada kategori 5001+. Industri yang paling dominan adalah Computer Software / Engineering. Rata-rata organisasi berdiri pada tahun 1996."
+  },
+  "datasetInsights": {
+    "dominantCountry": "Korea",
+    "dominantIndustry": "Computer Software / Engineering",
+    "largestEmployeeCategory": "5001+",
+    "averageFoundedYear": 1996
+  },
+  "countries": {
+    "top50": [
+      {
+        "name": "Korea",
+        "total": 4140
+      },
+      {
+        "name": "Congo",
+        "total": 4043
+      },
+      {
+        "name": "Guadeloupe",
+        "total": 2173
+      },
+      {
+        "name": "Macao",
+        "total": 2141
+      },
+      {
+        "name": "Aruba",
+        "total": 2131
+      },
+      {
+        "name": "Norfolk Island",
+        "total": 2129
+      },
+      {
+        "name": "Saint Pierre and Miquelon",
+        "total": 2126
+      },
+      {
+        "name": "Canada",
+        "total": 2120
+      },
+      {
+        "name": "United Kingdom",
+        "total": 2120
+      },
+      {
+        "name": "Belize",
+        "total": 2117
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "total": 2117
+      },
+      {
+        "name": "Greenland",
+        "total": 2113
+      },
+      {
+        "name": "Lao People's Democratic Republic",
+        "total": 2110
+      },
+      {
+        "name": "Ecuador",
+        "total": 2108
+      },
+      {
+        "name": "Indonesia",
+        "total": 2108
+      },
+      {
+        "name": "Pitcairn Islands",
+        "total": 2107
+      },
+      {
+        "name": "Senegal",
+        "total": 2102
+      },
+      {
+        "name": "Lesotho",
+        "total": 2102
+      },
+      {
+        "name": "Kuwait",
+        "total": 2102
+      },
+      {
+        "name": "Tajikistan",
+        "total": 2099
+      },
+      {
+        "name": "Faroe Islands",
+        "total": 2096
+      },
+      {
+        "name": "Singapore",
+        "total": 2095
+      },
+      {
+        "name": "Uzbekistan",
+        "total": 2095
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "total": 2095
+      },
+      {
+        "name": "Slovenia",
+        "total": 2094
+      },
+      {
+        "name": "Montserrat",
+        "total": 2094
+      },
+      {
+        "name": "Wallis and Futuna",
+        "total": 2094
+      },
+      {
+        "name": "United States Minor Outlying Islands",
+        "total": 2093
+      },
+      {
+        "name": "Libyan Arab Jamahiriya",
+        "total": 2091
+      },
+      {
+        "name": "Puerto Rico",
+        "total": 2089
+      },
+      {
+        "name": "Saint Lucia",
+        "total": 2088
+      },
+      {
+        "name": "Bulgaria",
+        "total": 2088
+      },
+      {
+        "name": "Somalia",
+        "total": 2088
+      },
+      {
+        "name": "Yemen",
+        "total": 2088
+      },
+      {
+        "name": "Kyrgyz Republic",
+        "total": 2087
+      },
+      {
+        "name": "Fiji",
+        "total": 2087
+      },
+      {
+        "name": "Botswana",
+        "total": 2086
+      },
+      {
+        "name": "Greece",
+        "total": 2085
+      },
+      {
+        "name": "Malawi",
+        "total": 2084
+      },
+      {
+        "name": "Finland",
+        "total": 2083
+      },
+      {
+        "name": "Latvia",
+        "total": 2083
+      },
+      {
+        "name": "Brunei Darussalam",
+        "total": 2082
+      },
+      {
+        "name": "Oman",
+        "total": 2081
+      },
+      {
+        "name": "Azerbaijan",
+        "total": 2081
+      },
+      {
+        "name": "Trinidad and Tobago",
+        "total": 2081
+      },
+      {
+        "name": "Poland",
+        "total": 2080
+      },
+      {
+        "name": "China",
+        "total": 2080
+      },
+      {
+        "name": "Tonga",
+        "total": 2079
+      },
+      {
+        "name": "Germany",
+        "total": 2079
+      },
+      {
+        "name": "Ukraine",
+        "total": 2078
+      }
+    ]
+  },
+  "industries": {
+    "top50": [
+      {
+        "name": "Computer Software / Engineering",
+        "total": 3535
+      },
+      {
+        "name": "Warehousing",
+        "total": 3527
+      },
+      {
+        "name": "Logistics / Procurement",
+        "total": 3502
+      },
+      {
+        "name": "Renewables / Environment",
+        "total": 3496
+      },
+      {
+        "name": "Research Industry",
+        "total": 3494
+      },
+      {
+        "name": "Broadcast Media",
+        "total": 3493
+      },
+      {
+        "name": "Animation",
+        "total": 3489
+      },
+      {
+        "name": "Pharmaceuticals",
+        "total": 3485
+      },
+      {
+        "name": "Non - Profit / Volunteering",
+        "total": 3483
+      },
+      {
+        "name": "Facilities Services",
+        "total": 3481
+      },
+      {
+        "name": "Environmental Services",
+        "total": 3481
+      },
+      {
+        "name": "Dairy",
+        "total": 3478
+      },
+      {
+        "name": "Cosmetics",
+        "total": 3476
+      },
+      {
+        "name": "Mental Health Care",
+        "total": 3475
+      },
+      {
+        "name": "Utilities",
+        "total": 3475
+      },
+      {
+        "name": "Market Research",
+        "total": 3474
+      },
+      {
+        "name": "Arts / Crafts",
+        "total": 3469
+      },
+      {
+        "name": "Nanotechnology",
+        "total": 3468
+      },
+      {
+        "name": "Food Production",
+        "total": 3467
+      },
+      {
+        "name": "Government Relations",
+        "total": 3464
+      },
+      {
+        "name": "Writing / Editing",
+        "total": 3462
+      },
+      {
+        "name": "Publishing Industry",
+        "total": 3462
+      },
+      {
+        "name": "Railroad Manufacture",
+        "total": 3458
+      },
+      {
+        "name": "Furniture",
+        "total": 3455
+      },
+      {
+        "name": "Import / Export",
+        "total": 3453
+      },
+      {
+        "name": "Hospital / Health Care",
+        "total": 3453
+      },
+      {
+        "name": "Fine Art",
+        "total": 3452
+      },
+      {
+        "name": "Photography",
+        "total": 3452
+      },
+      {
+        "name": "Automotive",
+        "total": 3451
+      },
+      {
+        "name": "Civil Engineering",
+        "total": 3451
+      },
+      {
+        "name": "Online Publishing",
+        "total": 3449
+      },
+      {
+        "name": "Information Technology / IT",
+        "total": 3448
+      },
+      {
+        "name": "Computer / Network Security",
+        "total": 3448
+      },
+      {
+        "name": "Transportation",
+        "total": 3447
+      },
+      {
+        "name": "Accounting",
+        "total": 3444
+      },
+      {
+        "name": "Fishery",
+        "total": 3444
+      },
+      {
+        "name": "Events Services",
+        "total": 3442
+      },
+      {
+        "name": "Ranching",
+        "total": 3439
+      },
+      {
+        "name": "Tobacco",
+        "total": 3438
+      },
+      {
+        "name": "Aviation / Aerospace",
+        "total": 3438
+      },
+      {
+        "name": "Hospitality",
+        "total": 3437
+      },
+      {
+        "name": "Government Administration",
+        "total": 3437
+      },
+      {
+        "name": "Entertainment / Movie Production",
+        "total": 3435
+      },
+      {
+        "name": "Education Management",
+        "total": 3433
+      },
+      {
+        "name": "Mining / Metals",
+        "total": 3433
+      },
+      {
+        "name": "Glass / Ceramics / Concrete",
+        "total": 3429
+      },
+      {
+        "name": "Printing",
+        "total": 3429
+      },
+      {
+        "name": "Defense / Space",
+        "total": 3427
+      },
+      {
+        "name": "Management Consulting",
+        "total": 3427
+      },
+      {
+        "name": "Gambling / Casinos",
+        "total": 3427
+      }
+    ]
+  },
+  "employees": {
+    "minEmployees": 1,
+    "maxEmployees": 9999,
+    "averageEmployees": 5000,
+    "distribution": [
+      {
+        "category": "1-50",
+        "total": 2558
+      },
+      {
+        "category": "51-200",
+        "total": 7407
+      },
+      {
+        "category": "201-500",
+        "total": 14810
+      },
+      {
+        "category": "501-1000",
+        "total": 25037
+      },
+      {
+        "category": "1001-5000",
+        "total": 200304
+      },
+      {
+        "category": "5001+",
+        "total": 249884
+      }
+    ]
+  },
+  "founded": {
+    "oldestFoundedYear": 1970,
+    "newestFoundedYear": 2022,
+    "averageFoundedYear": 1996
+  }
+}

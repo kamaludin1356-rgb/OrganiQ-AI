@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OrganiQ AI Assistant</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="logo-box">
+        <img
+          src="organiq-logo.png.png"
+          alt="OrganiQ Logo"
+          class="logo-image">
+      </div>
+
+      <nav class="menu">
+
+        <button
+          class="menu-item active"
+          onclick="sidebarAsk('Berikan executive insight utama dari dataset organisasi global ini', this)">
+          📊 Executive Insight
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="sidebarAsk('Berikan ringkasan dataset organisasi global ini', this)">
+          🤖 AI Assistant
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="sidebarAsk('Analisis negara dengan jumlah organisasi terbanyak', this)">
+          🌎 Country Analysis
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="sidebarAsk('Analisis industri paling dominan dalam dataset', this)">
+          🏭 Industry Analysis
+        </button>
+
+        <button
+          class="menu-item"
+          onclick="sidebarAsk('Berikan analisis tren dari dataset organisasi global ini', this)">
+          📈 Trend Analysis
+        </button>
+
+      </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+      <!-- HEADER -->
+
+      <div class="header">
+
+        <div>
+
+          <h1 id="page-title">
+            GLOBAL ORGANIZATION INTELLIGENCE
+          </h1>
+
+          <p>
+            Analyze 500,000 Organizations with AI
+          </p>
+
+        </div>
+
+        <div class="header-right">
+
+          <div class="status-badge">
+            🟢 AI Online
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- KPI -->
+
+      <div class="kpi-grid">
+
+        <div class="kpi-card">
+          <span>🏢 Total Organizations</span>
+          <h2>500,000</h2>
+        </div>
+
+        <div class="kpi-card">
+          <span>🌍 Top Country</span>
+          <h2>Korea</h2>
+        </div>
+
+        <div class="kpi-card">
+          <span>🏭 Top Industry</span>
+          <h2>Software</h2>
+        </div>
+
+        <div class="kpi-card">
+          <span>📅 Avg Founded</span>
+          <h2>1996</h2>
+        </div>
+
+      </div>
+
+      <!-- CHAT -->
+
+      <div
+        id="chat-box"
+        class="chat-box">
+
+        <div class="welcome-card">
+
+          <h3>
+            🤖 Welcome to OrganiQ AI
+          </h3>
+
+          <p>
+            Ask questions about organizations, industries,
+            countries, trends, business intelligence,
+            or anything else you'd like to explore.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- INPUT -->
+
+      <div class="input-area">
+
+        <input
+          type="text"
+          id="question"
+          placeholder="Ask OrganiQ AI anything...">
+
+        <button onclick="askAI()">
+          Kirim
+        </button>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
