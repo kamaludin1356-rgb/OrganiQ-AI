@@ -21,8 +21,13 @@ const client = new OpenAI({
 // =========================
 // LOAD DATASET SUMMARY
 // =========================
+const path = require("path");
+
 const datasetSummary = JSON.parse(
-  fs.readFileSync("dataset_summary.json", "utf8")
+  fs.readFileSync(
+    path.join(__dirname, "dataset_summary.json"),
+    "utf8"
+  )
 );
 
 // =========================
