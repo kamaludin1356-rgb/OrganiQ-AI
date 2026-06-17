@@ -18,13 +18,12 @@
 
 body{
   background:var(--bg);
-  height:100vh;
-  overflow:hidden;
+  min-height:100vh;
 }
 
 .app{
   display:flex;
-  height:100vh;
+  min-height:100vh;
 }
 
 /* =====================
@@ -97,7 +96,6 @@ MAIN
   flex:1;
   display:flex;
   flex-direction:column;
-  overflow:hidden;
 }
 
 /* =====================
@@ -540,4 +538,75 @@ margin-top:0;
 .message.ai ul + p,
 .message.ai ol + p{
 margin-top:2px;
+}
+
+/* =====================
+MOBILE FIX
+===================== */
+
+@media (max-width: 768px){
+
+  body{
+    overflow:auto;
+    height:auto;
+  }
+
+  .app{
+    height:auto;
+    min-height:100vh;
+  }
+
+  .main-content{
+    overflow:visible;
+  }
+
+  .header{
+    padding:16px;
+  }
+
+  .header h1{
+    font-size:20px;
+  }
+
+  .status-badge{
+    display:none;
+  }
+
+  .kpi-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:16px;
+  }
+
+  .chat-box{
+    padding:16px;
+  }
+
+  .message.user{
+    max-width:90%;
+  }
+
+  .message.ai{
+    width:100%;
+    padding:16px;
+  }
+
+  .input-area{
+    padding:12px;
+    gap:8px;
+    position:sticky;
+    bottom:0;
+    background:#fff;
+  }
+
+  .input-area input{
+    min-width:0;
+    padding:14px;
+  }
+
+  .input-area button{
+    padding:0 18px;
+    white-space:nowrap;
+  }
+
 }
