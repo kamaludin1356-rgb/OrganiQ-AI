@@ -90,6 +90,13 @@ function quickAsk(question) {
 
 function sidebarAsk(question, button) {
 
+  const sidebar =
+  document.getElementById("sidebar");
+
+if(window.innerWidth < 900){
+  sidebar.classList.remove("open");
+}
+
   document
     .querySelectorAll(".menu-item")
     .forEach(item =>
@@ -171,3 +178,31 @@ document.addEventListener(
 
   }
 );
+
+function toggleSidebar(){
+
+  const sidebar =
+    document.getElementById("sidebar");
+
+  sidebar.classList.toggle("open");
+
+}
+
+document.addEventListener("click", function(e){
+
+  const sidebar =
+    document.getElementById("sidebar");
+
+  const toggle =
+    document.querySelector(".menu-toggle");
+
+  if(
+    window.innerWidth < 900 &&
+    sidebar.classList.contains("open") &&
+    !sidebar.contains(e.target) &&
+    !toggle.contains(e.target)
+  ){
+    sidebar.classList.remove("open");
+  }
+
+});
