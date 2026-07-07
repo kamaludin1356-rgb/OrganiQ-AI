@@ -20,14 +20,24 @@ async function askAI() {
     </div>
   `;
 
-  // Loading Message
-  const loadingId = "loading-" + Date.now();
+// Loading Message
+const loadingId = "loading-" + Date.now();
 
-  chat.innerHTML += `
-    <div class="message ai" id="${loadingId}">
-      🤖 Menganalisis data...
-    </div>
-  `;
+chat.innerHTML += `
+  <div class="message ai" id="${loadingId}">
+    🤖 OrganiQ AI sedang berpikir...
+  </div>
+`;
+
+const loadingElement = document.getElementById(loadingId);
+
+const dotsAnimation = setInterval(() => {
+  const dots =
+    ".".repeat((Date.now() / 500) % 4);
+
+  loadingElement.innerHTML =
+    `🤖 OrganiQ AI sedang berpikir${dots}`;
+}, 500);
 
   chat.scrollTop = chat.scrollHeight;
 
@@ -35,29 +45,86 @@ async function askAI() {
 
   try {
 
-    const response = await fetch(
-      `/ask?q=${encodeURIComponent(question)}`
-    );
+const response = await fetch(
+  `/ask?q=${encodeURIComponent(question)}`
+);
 
-    const data = await response.json();
+const loading =
+  document.getElementById(loadingId);
 
-    const loading =
-      document.getElementById(loadingId);
+if (loading) loading.remove();
 
-    if (loading) {
-      loading.remove();
+const aiId = "ai-" + Date.now();
+
+chat.innerHTML += `
+<div class="message ai">
+  <div id="${aiId}"></div>
+</div>
+`;
+
+const aiBox = document.getElementById(aiId);
+
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+
+let fullText = "";
+
+let buffer = "";
+
+while (true) {
+
+  const { done, value } = await reader.read();
+
+  if (done) break;
+
+  buffer += decoder.decode(value, { stream: true });
+
+  const lines = buffer.split("\n");
+
+  buffer = lines.pop();
+
+  for (const line of lines) {
+
+    if (!line.startsWith("data:")) continue;
+
+    const data = line.replace("data:", "").trim();
+
+    if (data === "[DONE]") continue;
+
+    try {
+
+      const json = JSON.parse(data);
+
+      const token =
+  json.token || "";
+
+      fullText += token;
+
+let html = marked.parse(fullText);
+
+// Bungkus semua tabel dengan div.table-wrapper
+html = html.replace(
+  /<table>/g,
+  '<div class="table-wrapper"><table>'
+);
+
+html = html.replace(
+  /<\/table>/g,
+  '</table></div>'
+);
+
+aiBox.innerHTML = html;
+
+      chat.scrollTop =
+        chat.scrollHeight;
+
+    } catch (err) {
+      // Abaikan jika belum JSON lengkap
     }
 
-    const cleanAnswer = data.answer
-      .replace(/\r\n/g, "\n")
-      .replace(/\n{3,}/g, "\n\n")
-      .trim();
+  }
 
-    chat.innerHTML += `
-      <div class="message ai">
-        ${marked.parse(cleanAnswer)}
-      </div>
-    `;
+}
 
   } catch (error) {
 
@@ -65,6 +132,7 @@ async function askAI() {
       document.getElementById(loadingId);
 
     if (loading) {
+      clearInterval(dotsAnimation);
       loading.remove();
     }
 

@@ -357,10 +357,25 @@ MARKDOWN
   line-height:1.45;
 }
 
-.message.ai table{
+.table-wrapper{
   width:100%;
-  border-collapse:collapse;
+  overflow-x:auto;
   margin:8px 0;
+}
+
+.table-wrapper table{
+  border-collapse:collapse;
+  min-width:700px;
+  width:max-content;
+}
+
+.table-wrapper::-webkit-scrollbar{
+  height:8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+  background:#CBD5E1;
+  border-radius:999px;
 }
 
 .message.ai th{
@@ -370,6 +385,11 @@ MARKDOWN
   padding:10px;
 
   text-align:left;
+}
+
+.message.ai th,
+.message.ai th strong{
+  color:white;
 }
 
 .message.ai td{
