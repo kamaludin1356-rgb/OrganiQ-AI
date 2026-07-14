@@ -7,7 +7,12 @@
 
   <title>OrganiQ AI Assistant</title>
 
-  <link rel="stylesheet" href="style.css">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,46 +31,111 @@
   class="sidebar"
   id="sidebar">
 
-      <div class="logo-box">
-        <img
-          src="organiq-logo.png.png"
-          alt="OrganiQ Logo"
-          class="logo-image">
-      </div>
+<div class="logo-box">
+    <img
+        id="sidebar-logo"
+        src="organiq-logo.png"
+        alt="OrganiQ Logo"
+        class="logo-image">
+</div>
 
-      <nav class="menu">
+<div class="sidebar-content">
 
-        <button
-          class="menu-item active"
-          onclick="sidebarAsk('Berikan executive insight utama dari dataset organisasi global ini', this)">
-          📊 Executive Insight
-        </button>
+  <button
+    class="new-chat-btn"
+    onclick="newChat()">
+    <i data-lucide="square-pen"></i>
+<span>New Chat</span>
+  </button>
 
-        <button
-          class="menu-item"
-          onclick="sidebarAsk('Berikan ringkasan dataset organisasi global ini', this)">
-          🤖 AI Assistant
-        </button>
+<div class="history-header">
 
-        <button
-          class="menu-item"
-          onclick="sidebarAsk('Analisis negara dengan jumlah organisasi terbanyak', this)">
-          🌎 Country Analysis
-        </button>
+  <div class="history-title">
+    HISTORY
+  </div>
 
-        <button
-          class="menu-item"
-          onclick="sidebarAsk('Analisis industri paling dominan dalam dataset', this)">
-          🏭 Industry Analysis
-        </button>
+  <button
+    id="clear-history-btn"
+    class="clear-history-btn"
+    title="Clear All History">
 
-        <button
-          class="menu-item"
-          onclick="sidebarAsk('Berikan analisis tren dari dataset organisasi global ini', this)">
-          📈 Trend Analysis
-        </button>
+    <i data-lucide="trash-2"></i>
 
-      </nav>
+  </button>
+
+</div>
+
+<div class="history-search">
+
+  <input
+    id="history-search"
+    type="text"
+    placeholder="Search conversations...">
+
+<button
+    id="clear-history-search"
+    class="clear-history-search">
+
+    <i data-lucide="x"></i>
+
+</button>
+
+</div>
+
+  <div
+    id="history-list"
+    class="history-list">
+
+<div
+  id="empty-history"
+  class="empty-history">
+
+<div class="empty-icon">
+    <i data-lucide="messages-square"></i>
+</div>
+
+      <p>No conversations yet</p>
+
+      <span>
+        Start a new chat to begin.
+      </span>
+
+    </div>
+
+<div id="history-items"></div>
+
+<div
+  id="empty-search"
+  class="empty-search">
+
+<div class="empty-icon">
+    <i data-lucide="search-x"></i>
+</div>
+
+  <p>No conversations found</p>
+
+  <span>
+    Try another keyword.
+  </span>
+
+</div>
+
+  </div>
+
+</div>
+
+<div class="sidebar-footer">
+
+<button
+    id="settings-btn"
+    class="settings-btn">
+
+    <i data-lucide="settings-2"></i>
+    <span>Settings</span>
+
+</button>
+
+</div>
 
     </aside>
 
@@ -73,107 +143,643 @@
 
     <main class="main-content">
 
-      <!-- HEADER -->
-
-      <div class="header">
-
-<button
-  class="menu-toggle mobile-only"
-  onclick="toggleSidebar()">
-  ☰
+    <button
+    id="floating-menu-toggle"
+    class="floating-menu-toggle mobile-only"
+    onclick="toggleSidebar()">
+    ☰
 </button>
 
-        <div>
+      <!-- HEADER -->
 
-          <h1 id="page-title">
-            GLOBAL ORGANIZATION INTELLIGENCE
-          </h1>
+<div class="header">
 
-          <p>
-            Analyze 500,000 Organizations with AI
-          </p>
+    <button
+        class="menu-toggle mobile-only"
+        onclick="toggleSidebar()">
+        ☰
+    </button>
 
-        </div>
+<div class="header-title">
 
-        <div class="header-right">
+    <div>
 
-          <div class="status-badge">
-            🟢 AI Online
-          </div>
+        <h1 id="page-title">
+            OrganiQ AI Assistant
+        </h1>
 
-        </div>
+        <p>
+            Business Intelligence Dashboard
+        </p>
 
-      </div>
+    </div>
 
-      <!-- KPI -->
+</div>
 
-      <div class="kpi-grid">
+    <div class="header-right"></div>
 
-        <div class="kpi-card">
-          <span>🏢 Total Organizations</span>
-          <h2>500,000</h2>
-        </div>
+</div>
 
-        <div class="kpi-card">
-          <span>🌍 Top Country</span>
-          <h2>Korea</h2>
-        </div>
+<!-- ==========================
+     LANDING V3
+========================== -->
 
-        <div class="kpi-card">
-          <span>🏭 Top Industry</span>
-          <h2>Software</h2>
-        </div>
+<div id="landing-container" class="landing-v3">
 
-        <div class="kpi-card">
-          <span>📅 Avg Founded</span>
-          <h2>1996</h2>
-        </div>
+    <!-- HERO -->
+    <section class="hero-section">
 
-      </div>
+<img
+    id="landing-logo"
+    src="organiq-landing-logo.png"
+    class="hero-logo"
+    alt="OrganiQ AI">
 
-      <!-- CHAT -->
+        <h1 class="hero-title">
+            Welcome to <span>OrganiQ AI</span>
+        </h1>
 
-      <div
-        id="chat-box"
-        class="chat-box">
+        <p class="hero-subtitle">
+            Analyze Organizations using AI-powered Business Intelligence.
+        </p>
 
-        <div class="welcome-card">
+    </section>
 
-          <h3>
-            🤖 Welcome to OrganiQ AI
-          </h3>
 
-          <p>
-            Ask questions about organizations, industries,
-            countries, trends, business intelligence,
-            or anything else you'd like to explore.
-          </p>
+    <!-- PROMPT -->
+    <section class="prompt-section">
 
-        </div>
+        <div id="landing-input" class="prompt-box">
 
-      </div>
+<span class="search-icon">
+    <i data-lucide="search"></i>
+</span>
 
-      <!-- INPUT -->
+    <textarea
+        id="question"
+        rows="1"
+        placeholder="Ask OrganiQ AI anything...">
+    </textarea>
 
-      <div class="input-area">
+    <button
+        onclick="askAI()"
+        class="send-btn">
 
-        <input
-          type="text"
-          id="question"
-          placeholder="Ask OrganiQ AI anything...">
+        ↑
 
-        <button onclick="askAI()">
-          Kirim
-        </button>
+    </button>
 
-      </div>
+</div>
+
+    </section>
+
+
+    <!-- QUICK ACTION -->
+
+    <section class="quick-actions">
+
+<div
+    class="quick-card"
+    onclick="quickAsk('Berikan saya ringkasan eksekutif dari dataset tersebut.')">
+
+<div class="quick-icon">
+    <i data-lucide="layout-dashboard"></i>
+</div>
+
+    <div class="quick-text">
+        Executive<br>Insight
+    </div>
+
+</div>
+
+<div
+    class="quick-card"
+    onclick="quickAsk('Negara mana saja yang memiliki organisasi terbanyak?')">
+
+<div class="quick-icon">
+    <i data-lucide="globe"></i>
+</div>
+
+    <div class="quick-text">
+        Country<br>Analysis
+    </div>
+
+</div>
+
+<div
+    class="quick-card"
+    onclick="quickAsk('Tunjukkan industri-industri yang dominan.')">
+
+<div class="quick-icon">
+    <i data-lucide="building-2"></i>
+</div>
+
+    <div class="quick-text">
+        Industry<br>Analysis
+    </div>
+
+</div>
+
+<div
+    class="quick-card"
+    onclick="quickAsk('Tampilkan tren organisasi berdasarkan tahun.')">
+
+<div class="quick-icon">
+    <i data-lucide="chart-column"></i>
+</div>
+
+    <div class="quick-text">
+        Trend<br>Analysis
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- EXAMPLES -->
+
+<section class="examples-section">
+
+    <div class="examples-title">
+
+        <span class="line"></span>
+
+        <h3>Examples</h3>
+
+        <span class="line"></span>
+
+    </div>
+
+    <div class="examples-grid">
+
+        <!-- semua button example tetap di sini -->
+
+    <button
+        class="example-card"
+        onclick="quickAsk('10 negara teratas dengan jumlah organisasi terbanyak')">
+
+        <span>
+            10 negara teratas dengan jumlah organisasi terbanyak
+        </span>
+
+<span class="example-arrow">
+    <i data-lucide="arrow-up-right"></i>
+</span>
+
+    </button>
+
+    <button
+        class="example-card"
+        onclick="quickAsk('Industri paling dominan dalam kumpulan data')">
+
+        <span>
+            Industri paling dominan dalam kumpulan data
+        </span>
+
+<span class="example-arrow">
+    <i data-lucide="arrow-up-right"></i>
+</span>
+
+    </button>
+
+    <button
+        class="example-card"
+        onclick="quickAsk('Bandingkan organisasi di Indonesia dan Singapura')">
+
+        <span>
+            Bandingkan organisasi di Indonesia dan Singapura
+        </span>
+
+<span class="example-arrow">
+    <i data-lucide="arrow-up-right"></i>
+</span>
+
+    </button>
+
+    <button
+        class="example-card"
+        onclick="quickAsk('Negara mana yang memiliki pertumbuhan tercepat?')">
+
+        <span>
+            Negara mana yang memiliki pertumbuhan tercepat?
+        </span>
+
+<span class="example-arrow">
+    <i data-lucide="arrow-up-right"></i>
+</span>
+
+    </button>
+
+</div>
+
+</div>
+
+<!-- CHAT MODE -->
+
+<div
+    id="chat-box"
+    class="chat-box">
+</div>
+
+<div id="chat-input-anchor"></div>
 
     </main>
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="script.js"></script>
+<div id="history-context-menu" class="history-context-menu">
+
+  <button id="rename-chat-btn">
+    ✏ Rename
+  </button>
+
+  <button id="delete-chat-btn">
+    🗑 Delete
+  </button>
+
+</div>
+
+<!-- DELETE CONVERSATION MODAL -->
+
+<div
+  id="delete-modal"
+  class="delete-modal">
+
+  <div class="delete-modal-box">
+
+<div class="delete-icon">
+    <i data-lucide="trash-2"></i>
+</div>
+
+    <h2>
+      Delete Conversation
+    </h2>
+
+    <p>
+      This conversation will be permanently deleted.
+      <br>
+      This action cannot be undone.
+    </p>
+
+    <div class="delete-actions">
+
+      <button
+        id="cancel-delete-btn"
+        class="cancel-btn">
+
+        Cancel
+
+      </button>
+
+      <button
+        id="confirm-delete-btn"
+        class="delete-btn">
+
+        Delete
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- RENAME CONVERSATION MODAL -->
+
+<div
+  id="rename-modal"
+  class="rename-modal">
+
+  <div class="rename-modal-box">
+
+<div class="rename-icon">
+    <i data-lucide="pencil-line"></i>
+</div>
+
+    <h2>
+      Rename Conversation
+    </h2>
+
+    <p>
+      Enter a new title for this conversation.
+    </p>
+
+    <input
+      id="rename-input"
+      type="text"
+      maxlength="60"
+      placeholder="Conversation title">
+
+    <div class="rename-actions">
+
+      <button
+        id="cancel-rename-btn"
+        class="cancel-btn">
+
+        Cancel
+
+      </button>
+
+      <button
+        id="save-rename-btn"
+        class="save-btn">
+
+        Save
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CLEAR ALL HISTORY MODAL -->
+
+<div
+  id="clear-history-modal"
+  class="delete-modal">
+
+  <div class="delete-modal-box">
+
+<div class="delete-icon">
+    <i data-lucide="trash-2"></i>
+</div>
+
+    <h2>
+      Clear All History
+    </h2>
+
+    <p>
+      This will permanently delete all conversations.
+      <br>
+      This action cannot be undone.
+    </p>
+
+    <div class="delete-actions">
+
+      <button
+        id="cancel-clear-history-btn"
+        class="cancel-btn">
+
+        Cancel
+
+      </button>
+
+      <button
+        id="confirm-clear-history-btn"
+        class="delete-btn">
+
+        Delete All
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SETTINGS CONTEXT MENU -->
+
+<div
+    id="settings-context-menu"
+    class="history-context-menu">
+
+<div id="settings-dark-btn" class="settings-dark-item">
+
+    <span class="settings-label">
+    <i data-lucide="moon"></i>
+    <span>Dark Mode</span>
+</span>
+
+    <label class="switch">
+
+        <input
+            type="checkbox"
+            id="settings-dark-toggle">
+
+        <span class="slider"></span>
+
+    </label>
+
+</div>
+
+    <hr>
+
+<button id="settings-dataset-btn">
+
+    <i data-lucide="database"></i>
+
+    <span>Dataset Information</span>
+
+</button>
+
+    <hr>
+
+<button id="settings-about-btn">
+
+    <i data-lucide="bot"></i>
+
+    <span>About OrganiQ AI</span>
+
+</button>
+
+</div>
+
+<!-- DATASET INFORMATION MODAL -->
+
+<div id="dataset-modal" class="delete-modal">
+
+    <div class="dataset-modal-box">
+
+        <div class="dataset-header">
+
+<div class="dataset-icon">
+    <i data-lucide="database"></i>
+</div>
+
+            <div>
+
+                <h2>Dataset Information</h2>
+
+                <p>
+                    Overview of the organization dataset used by OrganiQ AI.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="dataset-grid">
+
+            <div class="dataset-card">
+
+                <span>Total Organizations</span>
+
+                <strong>500,000</strong>
+
+            </div>
+
+            <div class="dataset-card">
+
+                <span>Countries</span>
+
+                <strong>243</strong>
+
+            </div>
+
+            <div class="dataset-card">
+
+                <span>Main Industry</span>
+
+                <strong>Computer Software</strong>
+
+            </div>
+
+            <div class="dataset-card">
+
+                <span>Average Founded</span>
+
+                <strong>1996</strong>
+
+            </div>
+
+        </div>
+
+<div class="dataset-description">
+
+    <h3>Tentang Dataset</h3>
+
+    <p>
+
+        Dataset yang digunakan pada OrganiQ AI berisi informasi mengenai
+        <strong>500.000 organisasi</strong> yang berasal dari
+        <strong>243 negara</strong> dengan berbagai sektor industri.
+
+        Dataset ini mencakup informasi seperti nama organisasi, negara, kategori industri,
+        jumlah karyawan, tahun berdiri, serta berbagai atribut pendukung lainnya.
+        Seluruh data tersebut digunakan sebagai sumber pengetahuan bagi OrganiQ AI
+        untuk menghasilkan insight, menjawab pertanyaan pengguna, serta membantu
+        proses analisis organisasi, industri, dan tren bisnis secara interaktif.
+
+    </p>
+
+</div>
+
+        <div class="delete-actions">
+
+            <button
+                id="close-dataset-btn"
+                class="cancel-btn">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ABOUT MODAL -->
+
+<div id="about-modal" class="delete-modal">
+
+    <div class="dataset-modal-box">
+
+        <div class="dataset-header">
+
+<div class="dataset-icon">
+    <i data-lucide="bot"></i>
+</div>
+
+            <div>
+
+                <h2>About OrganiQ AI</h2>
+
+                <p>
+                    AI-powered assistant for global organization intelligence.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="dataset-grid">
+
+            <div class="dataset-card">
+
+                <span>Version</span>
+
+                <strong>v6.2</strong>
+
+            </div>
+
+            <div class="dataset-card">
+
+                <span>AI Model</span>
+
+                <strong>Qwen Turbo</strong>
+
+            </div>
+
+            <div class="dataset-card">
+
+                <span>Status</span>
+
+                <strong style="color:#14B8A6;">Online</strong>
+
+            </div>
+
+        </div>
+
+        <div class="dataset-description">
+
+<h3>Tentang OrganiQ AI</h3>
+
+<p>
+
+OrganiQ AI merupakan asisten kecerdasan buatan yang dirancang untuk membantu pengguna menganalisis dan mengeksplorasi informasi dari dataset organisasi berskala besar secara cepat dan interaktif.
+
+Melalui antarmuka percakapan (chat), pengguna dapat memperoleh insight mengenai organisasi, negara, industri, tren bisnis, serta berbagai informasi lainnya dengan lebih mudah. OrganiQ AI dikembangkan untuk mendukung proses analisis data dan pengambilan keputusan secara lebih efisien.
+
+</p>
+
+        </div>
+
+        <div class="delete-actions">
+
+            <button
+                id="close-about-btn"
+                class="cancel-btn">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="smart-title.js"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+<script src="script.js"></script>
 
 </body>
 

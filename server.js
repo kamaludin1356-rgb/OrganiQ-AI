@@ -61,6 +61,8 @@ app.get("/test-ai", async (req, res) => {
 // =========================
 let chatHistory = [];
 
+const conversations = {};
+
 // =========================
 // ORGANIQ AI
 // =========================
@@ -69,6 +71,14 @@ app.get("/ask", async (req, res) => {
   try {
 
     const question = req.query.q;
+
+    const conversationId = req.query.conversationId;
+
+    console.log("Conversation ID:", conversationId);
+
+    if (!conversations[conversationId]) {
+  conversations[conversationId] = [];
+}
 
     if (!question) {
       return res.status(400).json({
@@ -182,7 +192,7 @@ ${JSON.stringify(datasetSummary)}
       role: "system",
       content: systemPrompt
     },
-    ...chatHistory,
+    ...conversations[conversationId],
     {
       role: "user",
       content: question
@@ -271,7 +281,7 @@ while (true) {
 }
 
 // Simpan percakapan setelah streaming selesai
-chatHistory.push(
+conversations[conversationId].push(
   {
     role: "user",
     content: question
@@ -283,8 +293,11 @@ chatHistory.push(
 );
 
 // Maksimal 20 pesan terakhir
-if (chatHistory.length > 20) {
-  chatHistory = chatHistory.slice(-20);
+if (conversations[conversationId].length > 20) {
+
+  conversations[conversationId] =
+    conversations[conversationId].slice(-20);
+
 }
 
 res.end();
